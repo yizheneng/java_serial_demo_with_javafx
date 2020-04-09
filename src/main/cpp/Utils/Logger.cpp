@@ -5,21 +5,21 @@
 #include "Logger.h"
 #include <sys/stat.h>
 #include <sys/types.h>
+#include <stdio.h>
 
 #ifdef _WIN32
 #include <direct.h>
 #include <windows.h>
-#include <stdio.h>
-#elif
+#else
 #include <dirent.h>
 #include <jni.h>
-#include "Utils.hpp"
 #include <sys/time.h>
+#include <string.h>
 #endif
 
 #ifdef _WIN32
 #define LOG_DIR "./control_log/"
-#elif
+#else
 #define LOG_DIR "/sdcard/control_log/"
 #endif
 #define KEEP_LOG_FILE_TIME (20 * 24 * 60 * 60)
@@ -45,7 +45,7 @@ lineNumber(0)
 
 	string name = getName();
 	olog.open(name, std::ios::app);
-#elif
+#else
 	if (0 == mkdir(LOG_DIR, 777)) {
 		printf("Succeed!\r\n");
 	}
@@ -74,12 +74,12 @@ std::string Logger::getTimeString()
 	char tmp[100] = { 0 };
 	sprintf(tmp, "%4d/%02d/%02d %02d_%02d_%02d.%03d", sys.wYear, sys.wMonth,  sys.wDay, sys.wHour, sys.wMinute, sys.wSecond,sys.wMilliseconds);
 	return std::string(tmp);
-#elif
+#else
 	struct timeval tv;
 	gettimeofday(&tv, NULL);
 
 	struct tm* tmP = localtime(&tv.tv_sec);
-	char buf[20];
+	char buf[40];
 	strftime(buf,
 		sizeof(buf) - 1,
 		"%Y-%m-%d %H:%M:%S",
@@ -161,7 +161,7 @@ string Logger::printLog(const char* format, ...)
 	va_start(vaList, format);
 #ifdef _WIN32
 	_snprintf(buf, sizeof(buf) - 1, format, vaList);
-#elif
+#else
 	snprintf(buf, sizeof(buf) - 1, format, vaList);
 #endif
 	va_end(vaList);
@@ -179,7 +179,7 @@ void Logger::checkLineNum()
 		olog.open(name, std::ios::app);
 #ifdef _WIN32
 
-#elif
+#else
 		system(("rm " + softLinkName).c_str());
 		string linkCmd = "ln -s " + name + " " + softLinkName;
 		system(linkCmd.c_str());
@@ -191,7 +191,7 @@ void Logger::checkFileNum()
 {
 #ifdef _WIN32
 
-#elif
+#else
 	DIR* dir = opendir(LOG_DIR);
 	if (dir == NULL) {
 		return;
@@ -234,11 +234,7 @@ void Logger::checkFileNum()
 }
 
 void Logger::writeLogToFile(string text) {
-#ifdef _WIN32
 	printf("%s\r\n", text.c_str());
-#elif
-	LOGI("%s", text.c_str());
-#endif
 	mutex.lock();
 	olog << text << endl;
 	checkLineNum();

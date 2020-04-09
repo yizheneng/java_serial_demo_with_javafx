@@ -8,7 +8,7 @@
 #ifdef _WIN32
 #include <windows.h>
 #pragma comment( lib,"winmm.lib" )
-#elif
+#else
 #endif
 
 ElapsedTimer::ElapsedTimer(int timeoutVal) :
@@ -62,7 +62,7 @@ long ElapsedTimer::getSystemUptime()
 {
 #ifdef _WIN32
 	return timeGetTime();
-#elif
+#else
 	clock_gettime(CLOCK_MONOTONIC, &tp);
 	return (long)tp.tv_sec * 1000 + tp.tv_nsec / 1000000;
 #endif
@@ -72,7 +72,7 @@ long ElapsedTimer::systemUptime()
 {
 #ifdef _WIN32
 	return timeGetTime();
-#elif
+#else
 	struct timespec tp;
 	clock_gettime(CLOCK_MONOTONIC, &tp);
 	return (long)tp.tv_sec * 1000 + tp.tv_nsec / 1000000;
