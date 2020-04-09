@@ -16,7 +16,8 @@ public class Main extends Application {
         System.out.println(os);
         if(os.toLowerCase().startsWith("win")){
             loadLocalLib("/native-lib.dll");
-        }else{
+        } else {
+            loadLocalLib("/libnative-lib.so");
         }
 
         primaryStage.setTitle("Hello World");
