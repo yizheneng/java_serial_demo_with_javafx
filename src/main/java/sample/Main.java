@@ -26,8 +26,7 @@ public class Main extends Application {
     }
 
     public boolean loadLocalLib(String resLib) {
-        try
-        {
+        try {
             //Finds a stream to the dll. Change path/class if necessary
             InputStream inputStream = getClass().getResource(resLib).openStream();
             //Change name if necessary
@@ -41,9 +40,7 @@ public class Main extends Application {
             temporaryDll.deleteOnExit();
             System.load(temporaryDll.getPath());
             return true;
-        }
-        catch(Throwable e)
-        {
+        } catch(Throwable e) {
             e.printStackTrace();
             return false;
         }

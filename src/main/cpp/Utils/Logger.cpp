@@ -17,10 +17,10 @@
 #include <string.h>
 #endif
 
-#ifdef _WIN32
-#define LOG_DIR "./control_log/"
-#else
+#ifdef __ANDROID__
 #define LOG_DIR "/sdcard/control_log/"
+#else
+#define LOG_DIR "./control_log/"
 #endif
 #define KEEP_LOG_FILE_TIME (20 * 24 * 60 * 60)
 
@@ -46,7 +46,7 @@ lineNumber(0)
 	string name = getName();
 	olog.open(name, std::ios::app);
 #else
-	if (0 == mkdir(LOG_DIR, 777)) {
+	if (0 == mkdir(LOG_DIR, S_IRWXU)) {
 		printf("Succeed!\r\n");
 	}
 	else {
@@ -58,9 +58,9 @@ lineNumber(0)
 	string name = getName();
 	olog.open(name, std::ios::app);
 
-	system(("rm " + softLinkName).c_str());
-	string linkCmd = "ln -s \"" + name + "\" " + softLinkName;
-	system(linkCmd.c_str());
+//	system(("rm " + softLinkName).c_str());
+//	string linkCmd = "ln -s \"" + name + "\" " + softLinkName;
+//	system(linkCmd.c_str());
 #endif
 
 	checkFileNum();
@@ -82,7 +82,7 @@ std::string Logger::getTimeString()
 	char buf[40];
 	strftime(buf,
 		sizeof(buf) - 1,
-		"%Y-%m-%d %H:%M:%S",
+		"%Y-%m-%d %H_%M_%S",
 		tmP);
 	return string(buf) + "." + to_string(tv.tv_usec / 1000);
 #endif
