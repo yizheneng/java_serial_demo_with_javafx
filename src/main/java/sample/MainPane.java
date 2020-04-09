@@ -2,6 +2,7 @@ package sample;
 
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import yizheneng.Driver.SerialPort;
 import yizheneng.Utils.JniLogger;
 
 public class MainPane extends AnchorPane {
@@ -12,6 +13,13 @@ public class MainPane extends AnchorPane {
 
         helloBtn.setOnAction(e -> {
             JniLogger.i(LOG_TAG, "nihaos");
+
+            String[] portList = SerialPort.listPorts();
+
+            for (String port :
+                    portList) {
+                JniLogger.d(LOG_TAG, port);
+            }
         });
     }
 }

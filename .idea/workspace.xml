@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/cpp/Driver/Serial/impl/list_ports/list_ports_linux.cc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/cpp/Driver/Serial/impl/list_ports/list_ports_osx.cc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/cpp/Driver/Serial/impl/list_ports/list_ports_win.cc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/cpp/Driver/Serial/impl/unix.cc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/cpp/Driver/Serial/impl/unix.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/cpp/Driver/Serial/impl/win.cc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/cpp/Driver/Serial/impl/win.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/cpp/Driver/Serial/serial.cc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/cpp/Driver/Serial/serial.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/cpp/Driver/Serial/v8stdint.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yizheneng/Driver/SerialPort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/cpp/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/cpp/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/cpp/Utils/Logger.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/cpp/Utils/Logger.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/MainPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/MainPane.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,6 +84,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectId" id="1aF48C9uZ4iYcsaDzlhhMoeTXFC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -87,7 +104,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/target/classes/sample" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -206,10 +223,10 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="841" y="271" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1586330470350">
+    <state x="841" y="271" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1586398675919">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state x="841" y="271" key="#com.intellij.ide.macro.MacrosDialog/65.24.1855.1056@65.24.1855.1056" timestamp="1586330470350" />
+    <state x="841" y="271" key="#com.intellij.ide.macro.MacrosDialog/65.24.1855.1056@65.24.1855.1056" timestamp="1586398675919" />
     <state x="805" y="251" key="#com.intellij.ide.util.MemberChooser" timestamp="1586328727286">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
@@ -218,38 +235,46 @@
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
     <state x="547" y="239" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/65.24.1855.1056@65.24.1855.1056" timestamp="1586318140285" />
+    <state x="769" y="450" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1586398218532">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state x="769" y="450" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/65.24.1855.1056@65.24.1855.1056" timestamp="1586398218532" />
+    <state x="511" y="216" key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor" timestamp="1586398216944">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state x="511" y="216" key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor/65.24.1855.1056@65.24.1855.1056" timestamp="1586398216944" />
     <state x="730" y="288" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586328996025">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
     <state x="730" y="288" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/65.24.1855.1056@65.24.1855.1056" timestamp="1586328996025" />
-    <state x="318" y="406" width="1115" height="335" key="#com.intellij.tools.ToolEditorDialog" timestamp="1586331671083">
+    <state x="318" y="406" width="1115" height="335" key="#com.intellij.tools.ToolEditorDialog" timestamp="1586398819766">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state x="318" y="406" width="1115" height="335" key="#com.intellij.tools.ToolEditorDialog/65.24.1855.1056@65.24.1855.1056" timestamp="1586331671083" />
-    <state x="539" y="321" key="FileChooserDialogImpl" timestamp="1586330883159">
+    <state x="318" y="406" width="1115" height="335" key="#com.intellij.tools.ToolEditorDialog/65.24.1855.1056@65.24.1855.1056" timestamp="1586398819766" />
+    <state x="539" y="321" key="FileChooserDialogImpl" timestamp="1586398280923">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state x="539" y="321" key="FileChooserDialogImpl/65.24.1855.1056@65.24.1855.1056" timestamp="1586330883159" />
-    <state width="1352" height="234" key="GridCell.Tab.0.bottom" timestamp="1586336432155">
+    <state x="539" y="321" key="FileChooserDialogImpl/65.24.1855.1056@65.24.1855.1056" timestamp="1586398280923" />
+    <state width="1809" height="234" key="GridCell.Tab.0.bottom" timestamp="1586399895002">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state width="1352" height="234" key="GridCell.Tab.0.bottom/65.24.1855.1056@65.24.1855.1056" timestamp="1586336432155" />
-    <state width="1352" height="234" key="GridCell.Tab.0.center" timestamp="1586336432155">
+    <state width="1809" height="234" key="GridCell.Tab.0.bottom/65.24.1855.1056@65.24.1855.1056" timestamp="1586399895002" />
+    <state width="1809" height="234" key="GridCell.Tab.0.center" timestamp="1586399895002">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state width="1352" height="234" key="GridCell.Tab.0.center/65.24.1855.1056@65.24.1855.1056" timestamp="1586336432155" />
-    <state width="1352" height="234" key="GridCell.Tab.0.left" timestamp="1586336432155">
+    <state width="1809" height="234" key="GridCell.Tab.0.center/65.24.1855.1056@65.24.1855.1056" timestamp="1586399895002" />
+    <state width="1809" height="234" key="GridCell.Tab.0.left" timestamp="1586399895001">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state width="1352" height="234" key="GridCell.Tab.0.left/65.24.1855.1056@65.24.1855.1056" timestamp="1586336432155" />
-    <state width="1352" height="234" key="GridCell.Tab.0.right" timestamp="1586336432155">
+    <state width="1809" height="234" key="GridCell.Tab.0.left/65.24.1855.1056@65.24.1855.1056" timestamp="1586399895001" />
+    <state width="1809" height="234" key="GridCell.Tab.0.right" timestamp="1586399895002">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state width="1352" height="234" key="GridCell.Tab.0.right/65.24.1855.1056@65.24.1855.1056" timestamp="1586336432155" />
-    <state x="292" y="155" key="SettingsEditor" timestamp="1586331671962">
+    <state width="1809" height="234" key="GridCell.Tab.0.right/65.24.1855.1056@65.24.1855.1056" timestamp="1586399895002" />
+    <state x="529" y="212" key="SettingsEditor" timestamp="1586398820660">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state x="292" y="155" key="SettingsEditor/65.24.1855.1056@65.24.1855.1056" timestamp="1586331671962" />
+    <state x="529" y="212" key="SettingsEditor/65.24.1855.1056@65.24.1855.1056" timestamp="1586398820660" />
     <state x="654" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1586395768924">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>

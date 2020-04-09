@@ -11,7 +11,7 @@
 #include <string.h>
 #include "jni.h"
 
-#define LOG_DIR "/sdcard/control_log/"
+#define LOG_DIR "./log/"
 #define KEEP_LOG_FILE_TIME (5 * 24 * 60 * 60)
 
 std::shared_ptr<Logger>& Logger::instance()
