@@ -8,6 +8,7 @@
 #include <memory>
 #include <string>
 #include <fstream>
+#include <mutex>
 
 using std::ofstream;
 using namespace std;
@@ -45,6 +46,8 @@ public:
 
     void logToFile(string level, string log, string fileName, int lineNum);
 
+	void logToFile(string level, string logTag, string log, string fileName, int lineNum);
+
     string getTimeString();
 
     string getName();
@@ -62,7 +65,7 @@ private:
     int reserveFileNum;
     int lineNumber;
     ofstream olog;
-    pthread_mutex_t mutex;
+    std::mutex mutex;
 };
 
 //#define LOG_DEBUG(...) Logger::instance()->logToFile("DEBUG",Logger::printLog(__VA_ARGS__), __FILE__,__LINE__);

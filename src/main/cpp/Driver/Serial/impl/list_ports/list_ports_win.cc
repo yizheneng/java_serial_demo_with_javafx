@@ -6,8 +6,8 @@
  * A copy of the licence can be obtained from:
  * http://opensource.org/licenses/MIT
  */
-
-#include "serial/serial.h"
+#pragma comment(lib,"setupapi")
+#include "serial.h"
 #include <tchar.h>
 #include <windows.h>
 #include <setupapi.h>

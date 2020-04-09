@@ -32,7 +32,11 @@ private:
     long timeoutVal; /// 单位ms
     long startTime;
     bool stopFlag;
-    struct timespec tp;
+#ifdef _WIN32
+    
+#else
+	struct timespec tp;
+#endif
     std::mutex timerMutex;
 };
 

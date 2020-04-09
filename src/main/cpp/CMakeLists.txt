@@ -1,10 +1,35 @@
 cmake_minimum_required(VERSION 3.4.1)
 add_compile_options(-std=c++11)
 
-include_directories(
+project(jni_lib)
+
+IF (CMAKE_SYSTEM_NAME MATCHES "Linux")
+    set (JniIncludePath
         /home/bing/idea/jbr/include
         /home/bing/idea/jbr/include/linux
+    )
 
+    set (SerialSources
+        Driver/Serial/serial.cc
+        Driver/Serial/impl/unix.cc
+        Driver/Serial/impl/list_ports/list_ports_linux.cc
+    )
+ELSE ()
+    set (JniIncludePath
+            "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2019.3.4/jbr/include"
+            "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2019.3.4/jbr/include/win32"
+            "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2019.3.4/jbr/include/win32/bridge"
+        )
+
+    set (SerialSources
+            Driver/Serial/serial.cc
+            Driver/Serial/impl/win.cc
+            Driver/Serial/impl/list_ports/list_ports_win.cc
+        )
+ENDIF (CMAKE_SYSTEM_NAME MATCHES "Linux")
+
+include_directories(
+        ${JniIncludePath}
         ${CMAKE_SOURCE_DIR}/Utils/
         {CMAKE_SOURCE_DIR}/Driver/Serial/impl/list_ports/
         ${CMAKE_SOURCE_DIR}/Driver/Serial/impl/
@@ -17,10 +42,6 @@ set(PROJECT_SRCS
         Utils/StringUtils.cpp
         yizheneng_Utils_JniLogger.cpp
         yizheneng_Driver_SerialPort.cpp
-
-        Driver/Serial/serial.cc
-        Driver/Serial/impl/unix.cc
-        Driver/Serial/impl/list_ports/list_ports_linux.cc
 )
 
 add_library(
@@ -29,6 +50,7 @@ add_library(
     SHARED
 
     ${PROJECT_SRCS}
+    ${SerialSources}
 )
 target_link_libraries(
     native-lib

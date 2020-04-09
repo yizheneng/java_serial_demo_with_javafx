@@ -21,7 +21,7 @@ JNIEXPORT jobjectArray JNICALL Java_yizheneng_Driver_SerialPort_listPorts
  */
 JNIEXPORT jboolean JNICALL Java_yizheneng_Driver_SerialPort_open
   (JNIEnv *, jclass) {
-
+	return true;
 }
 
 /*
@@ -31,7 +31,7 @@ JNIEXPORT jboolean JNICALL Java_yizheneng_Driver_SerialPort_open
  */
 JNIEXPORT jboolean JNICALL Java_yizheneng_Driver_SerialPort_isOpened
   (JNIEnv *, jclass) {
-
+	return true;
 }
 
 /*
@@ -51,7 +51,8 @@ JNIEXPORT void JNICALL Java_yizheneng_Driver_SerialPort_close
  */
 JNIEXPORT jbyteArray JNICALL Java_yizheneng_Driver_SerialPort_readData
   (JNIEnv *, jclass) {
-
+	jbyteArray result;
+	return result;
 }
 
 /*
