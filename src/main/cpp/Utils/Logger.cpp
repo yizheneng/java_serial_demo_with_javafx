@@ -36,14 +36,15 @@ reserveFileNum(reserveFileNum),
 lineNumber(0)
 {
 #ifdef _WIN32
-	//    if(0 == _mkdir(LOG_DIR)) {
-	//        printf("Succeed!\r\n");
-	//    } else {
-	//        char* s = strerror(errno);
-	//        printf("Error:%s\r\n", s);
-	//    }
+    if(0 == _mkdir(LOG_DIR)) {
+	        printf("Succeed!\r\n");
+	} else {
+	        char* s = strerror(errno);
+	        printf("Error:%s\r\n", s);
+    }
 
 	string name = getName();
+	printf("name:%s\r\n", name.c_str());
 	olog.open(name, std::ios::app);
 #else
 	if (0 == mkdir(LOG_DIR, S_IRWXU)) {
@@ -72,7 +73,7 @@ std::string Logger::getTimeString()
 	SYSTEMTIME sys;
 	GetLocalTime(&sys);
 	char tmp[100] = { 0 };
-	sprintf(tmp, "%4d/%02d/%02d %02d_%02d_%02d.%03d", sys.wYear, sys.wMonth,  sys.wDay, sys.wHour, sys.wMinute, sys.wSecond,sys.wMilliseconds);
+	sprintf(tmp, "%4d-%02d-%02d %02d_%02d_%02d.%03d", sys.wYear, sys.wMonth,  sys.wDay, sys.wHour, sys.wMinute, sys.wSecond,sys.wMilliseconds);
 	return std::string(tmp);
 #else
 	struct timeval tv;
