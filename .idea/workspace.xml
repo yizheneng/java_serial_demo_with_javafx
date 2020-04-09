@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/cpp/Driver/Serial/impl/list_ports/list_ports_linux.cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/cpp/Driver/Serial/impl/list_ports/list_ports_osx.cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/cpp/Driver/Serial/impl/list_ports/list_ports_win.cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/cpp/Driver/Serial/impl/unix.cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/cpp/Driver/Serial/impl/unix.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/cpp/Driver/Serial/impl/win.cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/cpp/Driver/Serial/impl/win.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/cpp/Driver/Serial/serial.cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/cpp/Driver/Serial/serial.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/cpp/Driver/Serial/v8stdint.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yizheneng/Driver/SerialPort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/cpp/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/cpp/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/cpp/Utils/Logger.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/cpp/Utils/Logger.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/MainPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/MainPane.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -283,5 +269,9 @@
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
     <state x="493" y="257" width="672" height="677" key="run.anything.popup/65.24.1855.1056@65.24.1855.1056" timestamp="1586327685591" />
+    <state x="722" y="453" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1586399931636">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state x="722" y="453" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/65.24.1855.1056@65.24.1855.1056" timestamp="1586399931636" />
   </component>
 </project>
