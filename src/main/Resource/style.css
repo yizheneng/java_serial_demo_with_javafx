@@ -1,0 +1,7 @@
+#CenterPane {
+    -fx-background-color: black;
+}
+
+#LeftPane {
+    -fx-background-color: red;
+}
