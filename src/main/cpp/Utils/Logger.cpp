@@ -240,4 +240,5 @@ void Logger::writeLogToFile(string text) {
 	olog << text << endl;
 	checkLineNum();
 	mutex.unlock();
+	fflush(stdout);
 }

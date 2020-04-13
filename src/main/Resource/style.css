@@ -22,7 +22,7 @@
 }
 
 #TitleLabel {
-    -fx-text-fill: radial-gradient(focus-angle 45deg, focus-distance 20%, center 25% 25%, radius 50%, reflect, gray, darkgray 75%, dimgray);
+    -fx-text-fill: white;//radial-gradient(focus-angle 45deg, focus-distance 20%, center 25% 25%, radius 50%, reflect, gray, darkgray 75%, dimgray);
     -fx-font-size: 30px;
 }
 

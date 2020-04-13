@@ -143,8 +143,13 @@ bool SerialPort::open(std::string portName, int baud)
 
 int SerialPort::sendData(uint8_t* data, int16_t length)
 {
-  std::lock_guard<std::mutex> lk(serialPortMutex);
-  return serial.write((uint8_t*)data, length);
+    std::lock_guard<std::mutex> lk(serialPortMutex);
+    try {
+        return serial.write((uint8_t*)data, length);
+    } catch(serial::PortNotOpenedException& e) {
+        LOG_ERROR("Send data error, serial port closed!");
+        return 0;
+    }
 }
 
 int SerialPort::readData(uint8_t* dataBuf, int16_t bufSize)

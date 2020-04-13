@@ -18,6 +18,8 @@ class MainPane  : BorderPane() {
 
         leftPane.minWidth = 200.0
         leftPane.maxWidth = 200.0
+
+        centerPane.maxHeight(2080.0)
     }
 
     fun stop() {
