@@ -3,7 +3,6 @@
 #include "serial.h"
 
 using namespace std;
-#define SERIALPORT_LOG_TAG "SerialPort"
 
 class SerialPort
 {
@@ -128,15 +127,15 @@ bool SerialPort::open(std::string portName, int baud)
       serial.setTimeout(to);
       serial.open();
   } catch(serial::IOException& e) {
-	  LOG_ERROR(SERIALPORT_LOG_TAG, "Open serial port exception:%d", e.getErrorNumber());
+	  LOG_ERROR("Open serial port exception:%d", e.getErrorNumber());
       return false;
   }
 
   if(!serial.isOpen()) {
-	  LOG_ERROR(SERIALPORT_LOG_TAG, "Open serial port error!!");
+	  LOG_ERROR("Open serial port error!!");
       return false;
   } else {
-	  LOG_INFO(SERIALPORT_LOG_TAG, "Open serial port succeed!!");
+	  LOG_INFO("Open serial port succeed!!");
   }
 
   return true;
@@ -148,7 +147,7 @@ int SerialPort::sendData(uint8_t* data, int16_t length)
     try {
         return serial.write((uint8_t*)data, length);
     } catch(serial::PortNotOpenedException& e) {
-		LOG_ERROR(SERIALPORT_LOG_TAG, "Send data error, serial port closed!");
+		LOG_ERROR("Send data error, serial port closed!");
         return 0;
     }
 }

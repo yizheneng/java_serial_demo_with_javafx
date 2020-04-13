@@ -74,25 +74,25 @@ private:
 //#define LOG_ERROR(...) Logger::instance()->logToFile("ERROR",Logger::printLog(__VA_ARGS__), __FILE__,__LINE__);
 #ifdef _WIN32
 #include <Windows.h>
-#define LOG_DEBUG(log_tag,...) {\
+#define LOG_DEBUG(...) {\
                         char buf[1024]; \
                         _snprintf(buf, sizeof(buf) - 1, __VA_ARGS__);\
-                        Logger::instance()->logToFile("DEBUG",log_tag,buf,__FILE__,__LINE__);}
+                        Logger::instance()->logToFile("DEBUG",buf,__FILE__,__LINE__);}
 
-#define LOG_INFO(log_tag,...) {\
+#define LOG_INFO(...) {\
                         char buf[1024]; \
                         _snprintf(buf, sizeof(buf) - 1, __VA_ARGS__);\
-                        Logger::instance()->logToFile("INFO",log_tag,buf,__FILE__,__LINE__);}
+                        Logger::instance()->logToFile("INFO",buf,__FILE__,__LINE__);}
 
-#define LOG_WARN(log_tag,...) {\
+#define LOG_WARN(...) {\
                         char buf[1024]; \
                         _snprintf(buf, sizeof(buf) - 1, __VA_ARGS__);\
-                        Logger::instance()->logToFile("WARN",log_tag,buf,__FILE__,__LINE__);}
+                        Logger::instance()->logToFile("WARN",buf,__FILE__,__LINE__);}
 
-#define LOG_ERROR(log_tag,...) {\
+#define LOG_ERROR(...) {\
                         char buf[1024]; \
                         _snprintf(buf, sizeof(buf) - 1, __VA_ARGS__);\
-                        Logger::instance()->logToFile("ERROR",log_tag,buf,__FILE__,__LINE__);}
+                        Logger::instance()->logToFile("ERROR",buf,__FILE__,__LINE__);}
 #elif
 #define LOG_DEBUG(...) {\
                         char buf[1024]; \

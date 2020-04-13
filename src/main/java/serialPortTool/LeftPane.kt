@@ -33,7 +33,11 @@ class LeftPane : BorderPane() {
         portsLabel.styleClass.add("LeftPaneLabel")
 
         portNamesChoiceBox.maxWidth = 200.0;
-        portNamesChoiceBox.items.addAll(SerialPort.listPorts())
+
+        var portList = SerialPort.listPorts()
+        if(portList.isNotEmpty()) {
+            portNamesChoiceBox.items.addAll(portList)
+        }
 
         openButton.maxWidth = 200.0
         openButton.setOnAction {
