@@ -3,10 +3,10 @@ package serialPortTool
 import javafx.scene.layout.BorderPane
 
 class MainPane  : BorderPane() {
-    var LOG_TAG = "MainPane"
-    var titlePane = TitlePane()
-    var leftPane = LeftPane()
-    var centerPane = CenterPane()
+    private var LOG_TAG = "MainPane"
+    private var titlePane = TitlePane()
+    private var leftPane = LeftPane()
+    private var centerPane = CenterPane()
 
     init {
         top = titlePane
@@ -18,5 +18,9 @@ class MainPane  : BorderPane() {
 
         leftPane.minWidth = 200.0
         leftPane.maxWidth = 200.0
+    }
+
+    fun stop() {
+        centerPane.stop()
     }
 }

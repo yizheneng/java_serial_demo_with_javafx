@@ -12,10 +12,10 @@ import yizheneng.Utils.JniLogger
 
 
 class LeftPane : BorderPane() {
-    var portNamesChoiceBox = ChoiceBox<String>()
-    var baudChoiceBox = ChoiceBox<Int>()
-    var openButton = Button("打  开")
-    var serialOpenFlag = false
+    private var portNamesChoiceBox = ChoiceBox<String>()
+    private var baudChoiceBox = ChoiceBox<Int>()
+    private var openButton = Button("打  开")
+    private var serialOpenFlag = false
 
     init {
         id = "LeftPane"
@@ -65,11 +65,7 @@ class LeftPane : BorderPane() {
         }
 
         val topPane = VBox()
-
-        topPane.children.add(portsLabel)
-        topPane.children.add(portNamesChoiceBox)
-        topPane.children.add(baudLabel)
-        topPane.children.add(baudChoiceBox)
+        topPane.children.addAll(portsLabel, portNamesChoiceBox, baudLabel, baudChoiceBox)
 
         this.top = topPane
         this.bottom = openButton

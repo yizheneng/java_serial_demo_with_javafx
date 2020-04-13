@@ -46,9 +46,9 @@ JNIEXPORT jobjectArray JNICALL Java_yizheneng_Driver_SerialPort_listPorts
  */
 JNIEXPORT jboolean JNICALL Java_yizheneng_Driver_SerialPort_open
   (JNIEnv *env, jclass, jstring portName, jint baud) {
-    const jchar* portNameP = (env)->GetStringChars(portName, 0);
-    LOG_INFO("Open serial port:%s", (char*)portNameP);
-    return serialPort.open(string((char*)portNameP), baud);
+    const char* portNameP = (env)->GetStringUTFChars(portName, 0);
+    LOG_INFO("Open serial port:%s", portNameP);
+    return serialPort.open(string(portNameP), baud);
 }
 
 /*
@@ -76,9 +76,13 @@ JNIEXPORT void JNICALL Java_yizheneng_Driver_SerialPort_close
  * Method:    readData
  * Signature: ()[B
  */
+#define RECEIVE_BUF_SIZE 255
+uint8_t receiveBuf[RECEIVE_BUF_SIZE];
 JNIEXPORT jbyteArray JNICALL Java_yizheneng_Driver_SerialPort_readData
-  (JNIEnv *, jclass) {
-	jbyteArray result;
+  (JNIEnv *env, jclass) {
+    int length = serialPort.readData(receiveBuf, RECEIVE_BUF_SIZE);
+	jbyteArray result = env->NewByteArray(length);
+    env->SetByteArrayRegion(result, 0, length, (const jbyte*)receiveBuf);;
 	return result;
 }
 
@@ -88,8 +92,13 @@ JNIEXPORT jbyteArray JNICALL Java_yizheneng_Driver_SerialPort_readData
  * Signature: ([B)V
  */
 JNIEXPORT void JNICALL Java_yizheneng_Driver_SerialPort_send
-  (JNIEnv *, jclass, jbyteArray) {
+  (JNIEnv *env, jclass, jbyteArray data) {
+    jsize len = env->GetArrayLength(data);
+    jbyte *jbarray = (jbyte *)malloc(len * sizeof(jbyte));
+    env->GetByteArrayRegion(data, 0, len, jbarray);
 
+    serialPort.sendData((uint8_t*)jbarray, len);
+    free(jbarray);
 }
 
 

@@ -16,13 +16,15 @@ class MainWindows : Application() {
         } else {
             loadLocalLib("/libnative-lib.so")
         }
-        val scene = Scene(MainPane(), 800.0, 600.0)
+
+        val mainPane = MainPane()
+        val scene = Scene(mainPane, 800.0, 600.0)
         scene.stylesheets.add(javaClass.getResource("/style.css").toExternalForm())
         primaryStage.title = "串口调试助手"
         primaryStage.scene = scene
         primaryStage.show()
         primaryStage.setOnCloseRequest {
-            Serial.stop()
+            mainPane.stop()
         }
     }
 

@@ -5,7 +5,7 @@ import javafx.scene.control.Label
 import javafx.scene.layout.HBox
 
 class TitlePane : HBox() {
-    val titleLabel = Label("串口调试助手")
+    private val titleLabel = Label("串口调试助手")
 
     init {
         id = "TitlePane"
@@ -14,7 +14,6 @@ class TitlePane : HBox() {
         titleLabel.id = "TitleLabel"
         titleLabel.minHeightProperty().bind(this.heightProperty().add(-20))
         titleLabel.maxHeightProperty().bind(this.heightProperty().add(-20))
-
 
         this.children.add(titleLabel)
     }
