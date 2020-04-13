@@ -1,7 +1,44 @@
 #CenterPane {
-    -fx-background-color: black;
+    -fx-background-color: white;
 }
 
 #LeftPane {
-    -fx-background-color: red;
+    -fx-background-color: #3B3D4A;
+    -fx-border-width: 0 7 0 0;
+    -fx-border-color: white;
+    -fx-effect: dropshadow(three-pass-box, #72b9da, 20.0,0, 0, 0);
 }
+
+#TitlePane {
+    -fx-background-color: #009688;
+    -fx-border-width: 0 0 7 0;
+    -fx-border-color: white;
+    -fx-effect: dropshadow(three-pass-box, #72b9da, 20.0,0, 0, 0);
+}
+
+#CenterPane {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, #72b9da, 20.0,0, 0, 0);
+}
+
+#TitleLabel {
+    -fx-text-fill: radial-gradient(focus-angle 45deg, focus-distance 20%, center 25% 25%, radius 50%, reflect, gray, darkgray 75%, dimgray);
+    -fx-font-size: 30px;
+}
+
+.LeftPaneLabel {
+    -fx-text-fill: #A3A7AF;
+    -fx-font-size: 20px;
+}
+
+.LeftPaneLineEdit {
+}
+
+.button {
+    -fx-background-color: #009688;
+}
+
+.button:hover {
+    -fx-effect: dropshadow(three-pass-box, #72b9da, 20.0,0, 0, 0);
+}
+

@@ -13,10 +13,10 @@ class MainPane  : BorderPane() {
         left = leftPane
         center = centerPane
 
-        titlePane.minHeight = 50.0
-        titlePane.maxHeight = 50.0
+        titlePane.minHeight = 80.0
+        titlePane.maxHeight = 80.0
 
-        leftPane.minWidth = 100.0
-        leftPane.maxWidth = 100.0
+        leftPane.minWidth = 200.0
+        leftPane.maxWidth = 200.0
     }
 }
