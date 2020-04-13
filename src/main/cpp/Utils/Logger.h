@@ -93,7 +93,7 @@ private:
                         char buf[1024]; \
                         _snprintf(buf, sizeof(buf) - 1, __VA_ARGS__);\
                         Logger::instance()->logToFile("ERROR",buf,__FILE__,__LINE__);}
-#elif
+#else
 #define LOG_DEBUG(...) {\
                         char buf[1024]; \
                         snprintf(buf, sizeof(buf) - 1, __VA_ARGS__);\

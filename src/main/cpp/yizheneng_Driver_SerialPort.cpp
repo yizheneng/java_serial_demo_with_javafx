@@ -147,8 +147,11 @@ int SerialPort::sendData(uint8_t* data, int16_t length)
     try {
         return serial.write((uint8_t*)data, length);
     } catch(serial::PortNotOpenedException& e) {
-		LOG_ERROR("Send data error, serial port closed!");
+		LOG_ERROR("Send data error, serial not opened!");
         return 0;
+    } catch(serial::IOException& e) {
+      		LOG_ERROR("Send data error, serial port closed!");
+              return 0;
     }
 }
 
