@@ -1,8 +1,6 @@
 package yizheneng.Driver;
 
 public class SerialPort {
-
-
     public native static String[] listPorts();
 
     public native static boolean open(String portName, int baud);

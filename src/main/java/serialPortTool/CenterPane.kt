@@ -4,6 +4,8 @@ import javafx.scene.control.*
 import javafx.scene.layout.Priority
 import javafx.scene.layout.VBox
 import yizheneng.Driver.SerialPort
+import java.nio.charset.Charset
+import java.util.*
 
 class CenterPane : VBox() {
     private var mRunnable = Runnable{}
@@ -48,13 +50,18 @@ class CenterPane : VBox() {
     fun start() {
         mRunnable = Runnable {
             run {
+                var i:Long = 0
                 while (runFlag) {
                     Thread.sleep(5)
                     if(SerialPort.isOpened()) {
                         val dataBuf = SerialPort.readData()
                         if(dataBuf.isNotEmpty()) {
-                            receiverText.text = receiverText.text + String(dataBuf)
+//                            receiverText.text = receiverText.text + String(dataBuf)
+                            println(Date().toString() + "   receive:" + String(dataBuf));
                         }
+
+                        i = i.plus(1)
+                        SerialPort.send((i.toString()).toByteArray(Charset.defaultCharset()))
                     }
                 }
             }
