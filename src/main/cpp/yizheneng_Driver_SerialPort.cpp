@@ -1,7 +1,28 @@
 #include "yizheneng_Driver_SerialPort.h"
 #include "Logger.h"
+#include "serial.h"
 
 using namespace std;
+
+class SerialPort
+{
+public:
+  SerialPort();
+  ~SerialPort();
+
+  bool open(std::string portName, int baud);
+
+  int sendData(uint8_t* data, int16_t length);
+
+  int readData(uint8_t* dataBuf, int16_t bufSize);
+
+  void close();
+
+  bool isOpened();
+private:
+  serial::Serial serial;
+  std::mutex serialPortMutex;
+};
 
 SerialPort serialPort;
 
@@ -24,9 +45,10 @@ JNIEXPORT jobjectArray JNICALL Java_yizheneng_Driver_SerialPort_listPorts
  * Signature: ()Z
  */
 JNIEXPORT jboolean JNICALL Java_yizheneng_Driver_SerialPort_open
-  (JNIEnv *env, jstring portName, jint baud, jclass) {
-  const jchar* portNameP = (env)->GetStringChars(portName, 0);
-	return serialPort.open(string((char*)portNameP), baud);
+  (JNIEnv *env, jclass, jstring portName, jint baud) {
+    const jchar* portNameP = (env)->GetStringChars(portName, 0);
+    LOG_INFO("Open serial port:%s", (char*)portNameP);
+    return serialPort.open(string((char*)portNameP), baud);
 }
 
 /*

@@ -21,6 +21,9 @@ class MainWindows : Application() {
         primaryStage.title = "串口调试助手"
         primaryStage.scene = scene
         primaryStage.show()
+        primaryStage.setOnCloseRequest {
+            Serial.stop()
+        }
     }
 
     private fun loadLocalLib(resLib: String): Boolean {
