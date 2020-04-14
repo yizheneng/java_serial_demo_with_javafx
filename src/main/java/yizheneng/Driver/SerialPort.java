@@ -13,5 +13,5 @@ public class SerialPort {
 
     public native static void send(byte[] data);
 
-    
+    public native static String getError();
 }

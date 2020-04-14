@@ -53,6 +53,8 @@ class CenterPane : VBox() {
                 var i:Long = 0
                 while (runFlag) {
                     Thread.sleep(5)
+
+                    println("-------")
                     if(SerialPort.isOpened()) {
                         val dataBuf = SerialPort.readData()
                         if(dataBuf.isNotEmpty()) {

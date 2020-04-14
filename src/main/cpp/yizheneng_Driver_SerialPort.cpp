@@ -7,22 +7,130 @@ using namespace std;
 class SerialPort
 {
 public:
-  SerialPort();
-  ~SerialPort();
+    SerialPort();
+    ~SerialPort();
 
-  bool open(std::string portName, int baud);
+    bool open(std::string portName, int baud);
 
-  int sendData(uint8_t* data, int16_t length);
+    int sendData(uint8_t* data, int16_t length);
 
-  int readData(uint8_t* dataBuf, int16_t bufSize);
+    int readData(uint8_t* dataBuf, int16_t bufSize);
 
-  void close();
+    void close();
 
-  bool isOpened();
+    bool isOpened();
+
+    std::string getError() {
+        std::lock_guard<std::mutex> lk(serialPortErrorStringMutex);
+        return errorString;
+    }
+
 private:
-  serial::Serial serial;
-  std::mutex serialPortMutex;
+    void setError(std::string msg) {
+        std::lock_guard<std::mutex> lk(serialPortErrorStringMutex);
+        errorString = msg;
+    }
+
+    serial::Serial serial;
+    std::string errorString;
+
+    std::mutex serialPortMutex;
+    std::mutex serialPortErrorStringMutex;
 };
+
+SerialPort::SerialPort(/* args */)
+{
+}
+
+SerialPort::~SerialPort()
+{
+}
+
+bool SerialPort::open(std::string portName, int baud)
+{
+  LOG_INFO("Serial port:%s", portName.c_str());
+
+  std::lock_guard<std::mutex> lk(serialPortMutex);
+
+  if(serial.isOpen()) {
+    serial.close();
+  }
+
+  try {
+      serial.setPort(portName.c_str());
+      serial.setBaudrate(baud);
+      serial::Timeout to = serial::Timeout::simpleTimeout(5);
+      serial.setTimeout(to);
+      serial.open();
+  } catch(serial::IOException& e) {
+	  LOG_ERROR("Open serial port exception:%s", e.what());
+	  setError(e.what());
+      return false;
+  }
+
+  if(!serial.isOpen()) {
+	  LOG_ERROR("Open serial port error!!");
+      return false;
+  } else {
+	  LOG_INFO("Open serial port succeed!!");
+  }
+
+  return true;
+}
+
+int SerialPort::sendData(uint8_t* data, int16_t length)
+{
+    serialPortMutex.lock();
+    try {
+        int len = serial.write((uint8_t*)data, length);
+        serialPortMutex.unlock();
+        return len;
+    } catch(serial::PortNotOpenedException& e) {
+		LOG_ERROR("Send data error, serial not opened!");
+		setError(e.what());
+    } catch(serial::IOException& e) {
+        LOG_ERROR("Send data error, serial port closed!");
+        setError(e.what());
+    } catch (serial::SerialException& e) {
+        LOG_ERROR("Send data error, serial port disconnected, %s", e.what());
+        setError(e.what());
+    }
+    serialPortMutex.unlock();
+    close();
+    return 0;
+}
+
+int SerialPort::readData(uint8_t* dataBuf, int16_t bufSize)
+{
+    serialPortMutex.lock();
+    try {
+        int len = serial.read(dataBuf, bufSize);
+        serialPortMutex.unlock();
+        return len;
+    } catch(serial::IOException& e) {
+        LOG_ERROR("Receive data error, serial port closed, %s", e.what());
+        setError(e.what());
+    } catch (serial::SerialException& e) {
+        LOG_ERROR("Receive data error, serial port disconnected, %s", e.what());
+        setError(e.what());
+        return 0;
+    }
+    serialPortMutex.unlock();
+    close();
+    return 0;
+}
+
+void SerialPort::close()
+{
+    std::lock_guard<std::mutex> lk(serialPortMutex);
+    serial.close();
+}
+
+bool SerialPort::isOpened()
+{
+    std::lock_guard<std::mutex> lk(serialPortMutex);
+    return serial.isOpen();
+}
 
 SerialPort serialPort;
 
@@ -101,74 +209,7 @@ JNIEXPORT void JNICALL Java_yizheneng_Driver_SerialPort_send
     free(jbarray);
 }
 
-
-SerialPort::SerialPort(/* args */)
-{
-}
-
-SerialPort::~SerialPort()
-{
-}
-
-bool SerialPort::open(std::string portName, int baud) 
-{
-  LOG_INFO("Serial port:%s", portName.c_str());
-
-  std::lock_guard<std::mutex> lk(serialPortMutex);
-
-  if(serial.isOpen()) {
-    serial.close();
-  }
-
-  try {
-      serial.setPort(portName.c_str());
-      serial.setBaudrate(baud);
-      serial::Timeout to = serial::Timeout::simpleTimeout(5);
-      serial.setTimeout(to);
-      serial.open();
-  } catch(serial::IOException& e) {
-	  LOG_ERROR("Open serial port exception:%d", e.getErrorNumber());
-      return false;
-  }
-
-  if(!serial.isOpen()) {
-	  LOG_ERROR("Open serial port error!!");
-      return false;
-  } else {
-	  LOG_INFO("Open serial port succeed!!");
-  }
-
-  return true;
-}
-
-int SerialPort::sendData(uint8_t* data, int16_t length)
-{
-    std::lock_guard<std::mutex> lk(serialPortMutex);
-    try {
-        return serial.write((uint8_t*)data, length);
-    } catch(serial::PortNotOpenedException& e) {
-		LOG_ERROR("Send data error, serial not opened!");
-        return 0;
-    } catch(serial::IOException& e) {
-      		LOG_ERROR("Send data error, serial port closed!");
-              return 0;
-    }
-}
-
-int SerialPort::readData(uint8_t* dataBuf, int16_t bufSize)
-{
-  std::lock_guard<std::mutex> lk(serialPortMutex);
-  return serial.read(dataBuf, bufSize);
-}
-
-void SerialPort::close()
-{
-  std::lock_guard<std::mutex> lk(serialPortMutex);
-  serial.close();
-}
-
-bool SerialPort::isOpened()
-{
-  std::lock_guard<std::mutex> lk(serialPortMutex);
-  return serial.isOpen();
+JNIEXPORT jstring JNICALL Java_yizheneng_Driver_SerialPort_getError
+  (JNIEnv *env, jclass) {
+    return env->NewStringUTF(serialPort.getError().c_str());
 }

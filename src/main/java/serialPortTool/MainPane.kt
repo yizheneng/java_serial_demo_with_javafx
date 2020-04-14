@@ -24,5 +24,6 @@ class MainPane  : BorderPane() {
 
     fun stop() {
         centerPane.stop()
+        leftPane.stop()
     }
 }

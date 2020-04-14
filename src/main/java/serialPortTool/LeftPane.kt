@@ -1,5 +1,6 @@
 package serialPortTool
 
+import javafx.application.Platform
 import javafx.geometry.Insets
 import javafx.scene.control.Alert
 import javafx.scene.control.Button
@@ -8,7 +9,8 @@ import javafx.scene.control.Label
 import javafx.scene.layout.BorderPane
 import javafx.scene.layout.VBox
 import yizheneng.Driver.SerialPort
-import yizheneng.Utils.JniLogger
+import java.util.*
+import kotlin.concurrent.timerTask
 
 
 class LeftPane : BorderPane() {
@@ -16,6 +18,7 @@ class LeftPane : BorderPane() {
     private var baudChoiceBox = ChoiceBox<Int>()
     private var openButton = Button("打  开")
     private var serialOpenFlag = false
+    private val timer = Timer()
 
     init {
         id = "LeftPane"
@@ -62,7 +65,7 @@ class LeftPane : BorderPane() {
                     val alert = Alert(Alert.AlertType.ERROR)
                     alert.title = "错误"
                     alert.headerText = null
-                    alert.contentText = "串口打开失败！"
+                    alert.contentText = "串口打开失败,\r\n" + SerialPort.getError()
                     alert.showAndWait();
                 }
             }
@@ -73,5 +76,23 @@ class LeftPane : BorderPane() {
 
         this.top = topPane
         this.bottom = openButton
+
+        timer.schedule(timerTask {
+            Platform.runLater {
+                if(!SerialPort.isOpened()) {
+                    var portList = SerialPort.listPorts().toList() as ArrayList<String>
+                    var portListOld = portNamesChoiceBox.items
+
+                    for (portName in portListOld) {
+                        portList.remove(portName)
+                    }
+
+                    portNamesChoiceBox.items.addAll(portList as List<String>)
+                }
+        } },1000, 1000)
+    }
+
+    fun stop() {
+        timer.cancel()
     }
 }

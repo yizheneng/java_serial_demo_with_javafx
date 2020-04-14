@@ -55,6 +55,14 @@ JNIEXPORT jbyteArray JNICALL Java_yizheneng_Driver_SerialPort_readData
 JNIEXPORT void JNICALL Java_yizheneng_Driver_SerialPort_send
   (JNIEnv *, jclass, jbyteArray);
 
+/*
+ * Class:     yizheneng_Driver_SerialPort
+ * Method:    getError
+ * Signature: ()Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_yizheneng_Driver_SerialPort_getError
+  (JNIEnv *, jclass);
+
 #ifdef __cplusplus
 }
 #endif
