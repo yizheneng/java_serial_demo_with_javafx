@@ -17,51 +17,67 @@ JNIEXPORT jobjectArray JNICALL Java_yizheneng_Driver_SerialPort_listPorts
 
 /*
  * Class:     yizheneng_Driver_SerialPort
- * Method:    open
- * Signature: (Ljava/lang/String;I)Z
+ * Method:    openCPP
+ * Signature: (Ljava/lang/String;IJ)Z
  */
-JNIEXPORT jboolean JNICALL Java_yizheneng_Driver_SerialPort_open
-  (JNIEnv *, jclass, jstring, jint);
+JNIEXPORT jboolean JNICALL Java_yizheneng_Driver_SerialPort_openCPP
+  (JNIEnv *, jclass, jstring, jint, jlong);
 
 /*
  * Class:     yizheneng_Driver_SerialPort
- * Method:    isOpened
- * Signature: ()Z
+ * Method:    isOpenedCPP
+ * Signature: (J)Z
  */
-JNIEXPORT jboolean JNICALL Java_yizheneng_Driver_SerialPort_isOpened
+JNIEXPORT jboolean JNICALL Java_yizheneng_Driver_SerialPort_isOpenedCPP
+  (JNIEnv *, jclass, jlong);
+
+/*
+ * Class:     yizheneng_Driver_SerialPort
+ * Method:    closeCPP
+ * Signature: (J)V
+ */
+JNIEXPORT void JNICALL Java_yizheneng_Driver_SerialPort_closeCPP
+  (JNIEnv *, jclass, jlong);
+
+/*
+ * Class:     yizheneng_Driver_SerialPort
+ * Method:    readDataCPP
+ * Signature: (J)[B
+ */
+JNIEXPORT jbyteArray JNICALL Java_yizheneng_Driver_SerialPort_readDataCPP
+  (JNIEnv *, jclass, jlong);
+
+/*
+ * Class:     yizheneng_Driver_SerialPort
+ * Method:    sendCPP
+ * Signature: ([BJ)V
+ */
+JNIEXPORT void JNICALL Java_yizheneng_Driver_SerialPort_sendCPP
+  (JNIEnv *, jclass, jbyteArray, jlong);
+
+/*
+ * Class:     yizheneng_Driver_SerialPort
+ * Method:    getErrorCPP
+ * Signature: (J)Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_yizheneng_Driver_SerialPort_getErrorCPP
+  (JNIEnv *, jclass, jlong);
+
+/*
+ * Class:     yizheneng_Driver_SerialPort
+ * Method:    newSerialPortCPP
+ * Signature: ()J
+ */
+JNIEXPORT jlong JNICALL Java_yizheneng_Driver_SerialPort_newSerialPortCPP
   (JNIEnv *, jclass);
 
 /*
  * Class:     yizheneng_Driver_SerialPort
- * Method:    close
- * Signature: ()V
+ * Method:    deleteSerialPortCPP
+ * Signature: (J)V
  */
-JNIEXPORT void JNICALL Java_yizheneng_Driver_SerialPort_close
-  (JNIEnv *, jclass);
-
-/*
- * Class:     yizheneng_Driver_SerialPort
- * Method:    readData
- * Signature: ()[B
- */
-JNIEXPORT jbyteArray JNICALL Java_yizheneng_Driver_SerialPort_readData
-  (JNIEnv *, jclass);
-
-/*
- * Class:     yizheneng_Driver_SerialPort
- * Method:    send
- * Signature: ([B)V
- */
-JNIEXPORT void JNICALL Java_yizheneng_Driver_SerialPort_send
-  (JNIEnv *, jclass, jbyteArray);
-
-/*
- * Class:     yizheneng_Driver_SerialPort
- * Method:    getError
- * Signature: ()Ljava/lang/String;
- */
-JNIEXPORT jstring JNICALL Java_yizheneng_Driver_SerialPort_getError
-  (JNIEnv *, jclass);
+JNIEXPORT void JNICALL Java_yizheneng_Driver_SerialPort_deleteSerialPortCPP
+  (JNIEnv *, jclass, jlong);
 
 #ifdef __cplusplus
 }

@@ -55,17 +55,17 @@ class LeftPane : BorderPane() {
 
             if(serialOpenFlag) {
                 serialOpenFlag = !serialOpenFlag
-                SerialPort.close()
+                Serial.serialPort.close()
                 openButton.text = "打  开"
             } else {
-                if (SerialPort.open(portNamesChoiceBox.value, baudChoiceBox.value)) {
+                if (Serial.serialPort.open(portNamesChoiceBox.value, baudChoiceBox.value)) {
                     serialOpenFlag = !serialOpenFlag
                     openButton.text = "关  闭"
                 } else {
                     val alert = Alert(Alert.AlertType.ERROR)
                     alert.title = "错误"
                     alert.headerText = null
-                    alert.contentText = "串口打开失败,\r\n" + SerialPort.getError()
+                    alert.contentText = "串口打开失败,\r\n" + Serial.serialPort.error
                     alert.showAndWait();
                 }
             }
@@ -79,7 +79,7 @@ class LeftPane : BorderPane() {
 
         timer.schedule(timerTask {
             Platform.runLater {
-                if(!SerialPort.isOpened()) {
+                if(!Serial.serialPort.isOpened) {
                     var portList = SerialPort.listPorts().toList() as ArrayList<String>
                     var portListOld = portNamesChoiceBox.items
 

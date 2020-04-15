@@ -27,8 +27,8 @@ class CenterPane : VBox() {
 
         val sendButton = Button("发  送")
         sendButton.setOnAction {
-            if(SerialPort.isOpened()) {
-                SerialPort.send(sendText.text.toByteArray(Charsets.UTF_8))
+            if(Serial.serialPort.isOpened) {
+                Serial.serialPort.send(sendText.text.toByteArray(Charsets.UTF_8))
             } else {
                 val alert = Alert(Alert.AlertType.WARNING)
                 alert.title = "警告"
@@ -55,15 +55,15 @@ class CenterPane : VBox() {
                     Thread.sleep(5)
 
                     println("-------")
-                    if(SerialPort.isOpened()) {
-                        val dataBuf = SerialPort.readData()
+                    if(Serial.serialPort.isOpened) {
+                        val dataBuf = Serial.serialPort.readData()
                         if(dataBuf.isNotEmpty()) {
 //                            receiverText.text = receiverText.text + String(dataBuf)
                             println(Date().toString() + "   receive:" + String(dataBuf));
                         }
 
                         i = i.plus(1)
-                        SerialPort.send((i.toString()).toByteArray(Charset.defaultCharset()))
+                        Serial.serialPort.send((i.toString()).toByteArray(Charset.defaultCharset()))
                     }
                 }
             }
