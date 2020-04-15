@@ -19,7 +19,11 @@ class MainWindows : Application() {
                 loadLocalLib("/native-lib.dll")
             }
         } else {
-            loadLocalLib("/libnative-lib.so")
+            if(javaSdkBit.contains("64")) {
+                loadLocalLib("/libnativeSerial_x86-lib.so")
+            } else {
+                loadLocalLib("/libnativeSerial_x86-lib.so")
+            }
         }
 
         val mainPane = MainPane()
