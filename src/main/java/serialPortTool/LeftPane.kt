@@ -80,14 +80,18 @@ class LeftPane : BorderPane() {
         timer.schedule(timerTask {
             Platform.runLater {
                 if(!Serial.serialPort.isOpened) {
-                    var portList = SerialPort.listPorts().toList() as ArrayList<String>
+                    var portList = SerialPort.listPorts().toList()
                     var portListOld = portNamesChoiceBox.items
+                    var addList : List<String> = listOf()
 
-                    for (portName in portListOld) {
-                        portList.remove(portName)
+                    for (portName in portList) {
+                        if(!portListOld.contains(portName)) {
+                            addList = addList + portName
+                        }
                     }
 
-                    portNamesChoiceBox.items.addAll(portList as List<String>)
+                    if(addList.isNotEmpty())
+                        portNamesChoiceBox.items.addAll(addList)
                 }
         } },1000, 1000)
     }

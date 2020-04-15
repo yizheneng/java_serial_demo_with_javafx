@@ -44,16 +44,27 @@ set(PROJECT_SRCS
         yizheneng_Driver_SerialPort.cpp
 )
 
+IF(CMAKE_CL_64)
+    set(SerialLibName
+        nativeSerial_x64-lib
+    )
+ELSE(CMAKE_CL_64)
+    set(SerialLibName
+            nativeSerial_x86-lib
+    )
+ENDIF(CMAKE_CL_64)
+
 add_library(
-    native-lib
+    ${SerialLibName}
 
     SHARED
 
     ${PROJECT_SRCS}
     ${SerialSources}
 )
+
 target_link_libraries(
-    native-lib
-    )
+    ${SerialLibName}
+)
 
 set(CMAKE_BUILD_TYPE Debug)

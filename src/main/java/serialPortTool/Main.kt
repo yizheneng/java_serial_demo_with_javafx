@@ -10,9 +10,14 @@ class MainWindows : Application() {
     @Throws(Exception::class)
     override fun start(primaryStage: Stage) {
         val os = System.getProperty("os.name")
-        println(os)
+        val javaSdkBit = System.getProperty("os.arch")
+        println("$os---$javaSdkBit")
         if (os.toLowerCase().startsWith("win")) {
-            loadLocalLib("/native-lib.dll")
+            if(javaSdkBit.contains("64")) {
+                loadLocalLib("/nativeSerial_x64-lib.dll")
+            } else {
+                loadLocalLib("/native-lib.dll")
+            }
         } else {
             loadLocalLib("/libnative-lib.so")
         }
