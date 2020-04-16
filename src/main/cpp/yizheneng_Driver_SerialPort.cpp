@@ -48,7 +48,7 @@ SerialPort::~SerialPort()
 
 bool SerialPort::open(std::string portName, int baud)
 {
-  LOG_INFO("Serial port:%s", portName.c_str());
+  //LOG_INFO("Serial port:%s", portName.c_str());
 
   std::lock_guard<std::mutex> lk(serialPortMutex);
 
@@ -63,16 +63,16 @@ bool SerialPort::open(std::string portName, int baud)
       serial.setTimeout(to);
       serial.open();
   } catch(serial::IOException& e) {
-	  LOG_ERROR("Open serial port exception:%s", e.what());
+	  //LOG_ERROR("Open serial port exception:%s", e.what());
 	  setError(e.what());
       return false;
   }
 
   if(!serial.isOpen()) {
-	  LOG_ERROR("Open serial port error!!");
+	  //LOG_ERROR("Open serial port error!!");
       return false;
   } else {
-	  LOG_INFO("Open serial port succeed!!");
+	  //LOG_INFO("Open serial port succeed!!");
   }
 
   return true;
@@ -86,13 +86,13 @@ int SerialPort::sendData(uint8_t* data, int16_t length)
         serialPortMutex.unlock();
         return len;
     } catch(serial::PortNotOpenedException& e) {
-		LOG_ERROR("Send data error, serial not opened!");
+		//LOG_ERROR("Send data error, serial not opened!");
 		setError(e.what());
     } catch(serial::IOException& e) {
-        LOG_ERROR("Send data error, serial port closed!");
+        //LOG_ERROR("Send data error, serial port closed!");
         setError(e.what());
     } catch (serial::SerialException& e) {
-        LOG_ERROR("Send data error, serial port disconnected, %s", e.what());
+        //LOG_ERROR("Send data error, serial port disconnected, %s", e.what());
         setError(e.what());
     }
     serialPortMutex.unlock();
@@ -108,10 +108,10 @@ int SerialPort::readData(uint8_t* dataBuf, int16_t bufSize)
         serialPortMutex.unlock();
         return len;
     } catch(serial::IOException& e) {
-        LOG_ERROR("Receive data error, serial port closed, %s", e.what());
+        //LOG_ERROR("Receive data error, serial port closed, %s", e.what());
         setError(e.what());
     } catch (serial::SerialException& e) {
-        LOG_ERROR("Receive data error, serial port disconnected, %s", e.what());
+        //LOG_ERROR("Receive data error, serial port disconnected, %s", e.what());
         setError(e.what());
         return 0;
     }
@@ -154,7 +154,7 @@ JNIEXPORT jobjectArray JNICALL Java_yizheneng_Driver_SerialPort_listPorts
 JNIEXPORT jboolean JNICALL Java_yizheneng_Driver_SerialPort_openCPP
   (JNIEnv *env, jclass, jstring portName, jint baud, jlong pointer) {
     const char* portNameP = (env)->GetStringUTFChars(portName, 0);
-    LOG_INFO("Open serial port:%s", portNameP);
+    //LOG_INFO("Open serial port:%s", portNameP);
     return ((SerialPort*)pointer)->open(string(portNameP), baud);
 }
 
