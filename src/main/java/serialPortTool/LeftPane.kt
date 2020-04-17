@@ -1,12 +1,11 @@
 package serialPortTool
 
 import javafx.application.Platform
+import javafx.event.EventHandler
 import javafx.geometry.Insets
-import javafx.scene.control.Alert
-import javafx.scene.control.Button
-import javafx.scene.control.ChoiceBox
-import javafx.scene.control.Label
+import javafx.scene.control.*
 import javafx.scene.layout.BorderPane
+import javafx.scene.layout.HBox
 import javafx.scene.layout.VBox
 import yizheneng.Driver.SerialPort
 import java.util.*
@@ -19,6 +18,8 @@ class LeftPane : BorderPane() {
     private var openButton = Button("打  开")
     private var serialOpenFlag = false
     private val timer = Timer()
+    private val hexRev = ToggleButton("十六进制接收")
+    private val hexSend = ToggleButton("十六进制发送")
 
     init {
         id = "LeftPane"
@@ -71,8 +72,42 @@ class LeftPane : BorderPane() {
             }
         }
 
+
+        hexRev.isSelected = true
+        hexRev.styleClass.add("selectButton")
+        val stringRev = ToggleButton("字符串接收")
+        stringRev.styleClass.add("selectButton")
+        val revMode = ToggleGroup()
+        revMode.toggles.addAll(hexRev, stringRev)
+        val revHbox = HBox()
+        revHbox.children.addAll(hexRev, stringRev)
+
+        hexSend.isSelected = true
+        hexSend.styleClass.add("selectButton")
+        val stringSend = ToggleButton("字符串发送")
+        stringSend.styleClass.add("selectButton")
+        val sendMode = ToggleGroup()
+        sendMode.toggles.addAll(hexSend, stringSend)
+        val sendHbox = HBox()
+        sendHbox.children.addAll(hexSend, stringSend)
+
+        val time = CheckBox("时间戳")
+        time.styleClass.add("checkBox")
+        time.isDisable = true
+
+        val wordwrapCheckbox = CheckBox("自动换行")
+        wordwrapCheckbox.styleClass.add("checkBox")
+        wordwrapCheckbox.onMouseClicked = EventHandler{
+            time.isDisable = !wordwrapCheckbox.isSelected
+        }
+
+
+
         val topPane = VBox()
-        topPane.children.addAll(portsLabel, portNamesChoiceBox, baudLabel, baudChoiceBox)
+        topPane.spacing = 10.0
+        topPane.children.addAll(portsLabel, portNamesChoiceBox, baudLabel, baudChoiceBox, revHbox, sendHbox, wordwrapCheckbox, time)
+
+
 
         this.top = topPane
         this.bottom = openButton

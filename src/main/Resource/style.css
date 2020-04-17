@@ -42,3 +42,51 @@
     -fx-effect: dropshadow(three-pass-box, #72b9da, 20.0,0, 0, 0);
 }
 
+.selectButton {
+    -fx-background-color: white;
+}
+
+.selectButton:selected {
+    -fx-background-color: #009688;
+    -fx-text-fill: white;
+}
+
+.checkBox {
+    -fx-text-fill: white;
+}
+
+.titleToolButton {
+    -fx-background-size: 70% ;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: top;
+    -fx-background-color: #00000000;
+    -fx-alignment:bottom-center;
+    -fx-text-fill: white;
+    -fx-background-size: 40px 40px;
+}
+
+.titleToolButton:hover {
+//    -fx-border-width: 2;
+//    -fx-border-color: white;
+//    -fx-border-radius: 5;
+    -fx-background-color: #FFFFFF1f;
+}
+
+.clearReceiveButton {
+    -fx-background-image: url("Icon/edit_clear_receive.png");
+}
+
+.clearSendButton {
+    -fx-background-image: url("Icon/edit_clear_send.png");
+}
+
+.saveToFileButton {
+    -fx-background-size: 35px 35px;
+    -fx-background-image: url("Icon/save.png");
+}
+
+.aboutButton {
+    -fx-background-size: 40px 40px;
+    -fx-background-image: url("Icon/info.png");
+}
+
