@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="javafx_test">
+    <output-path>$PROJECT_DIR$/out/artifacts/javafx_test</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="sample.Main" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="Cnbot" />
+        <option name="vendor" value="V 0.0.1" />
+        <option name="version" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="javafx_test.jar">
+        <element id="module-output" name="javafx_test" />
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -9,20 +9,30 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 
 public class Main extends Application {
-
     @Override
     public void start(Stage primaryStage) throws Exception {
         String os = System.getProperty("os.name");
         System.out.println(os);
         if(os.toLowerCase().startsWith("win")){
-            loadLocalLib("/native-lib.dll");
+            loadLocalLib("/nativeSerial_x64-lib.dll");
         } else {
             loadLocalLib("/libnative-lib.so");
         }
 
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(new MainPane(), 300, 275));
+        MainPane mainPane = new MainPane();
+
+        primaryStage.setTitle("湖南超能机器人技术有限公司");
+        primaryStage.setScene(new Scene(mainPane, 330, 160));
         primaryStage.show();
+        primaryStage.setOnCloseRequest(e -> {
+            mainPane.cancel();
+            try {
+                Thread.sleep(1000);
+            }catch (InterruptedException event) {
+
+            }
+            System.exit(0);
+        });
     }
 
     public boolean loadLocalLib(String resLib) {

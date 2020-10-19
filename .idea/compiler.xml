@@ -20,7 +20,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="javafx_test" target="1.11" />
+      <module name="javafx_test" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,28 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="javafx_test" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_linux_11_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_linux_11_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_linux_11_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_linux_11_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_swing_linux_11_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_web_linux_11_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resource/Icon/edit_clear_history.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resource/Icon/edit_clear_receive.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resource/Icon/edit_clear_send.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resource/Icon/info.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resource/Icon/play.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resource/Icon/save.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resource/Icon/skin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Resource/Icon/stop.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yizheneng/Utils/HexTools.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/javafx_test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jfoenix_jfoenix_8_0_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resource/com/browniebytes/javafx/control/DateTimePicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resource/com/browniebytes/javafx/control/DateTimePicker.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resource/com/browniebytes/javafx/control/DateTimePickerPopup.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resource/com/browniebytes/javafx/control/HoursPicker.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resource/com/browniebytes/javafx/control/MinuteSecondPicker.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resource/com/browniebytes/javafx/control/icons/calendar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Resource/com/browniebytes/javafx/control/icons/check.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/browniebytes/javafx/control/DateTimePicker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/browniebytes/javafx/control/DateTimePickerPopup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/browniebytes/javafx/control/HoursPicker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/browniebytes/javafx/control/MinuteSecondPicker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/JavaFXApp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_6_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_7_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_6_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_6_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_6_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_7_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_6_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_6_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_linux_11_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_11_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_11_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_15.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_linux_11_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_15.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_linux_11_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_11_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_linux_11_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_win_11_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_swing_linux_11_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_swing_win_11_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_web_linux_11_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_web_win_11_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/javafx_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/javafx_test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resource/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resource/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/serialPortTool/CenterPane.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/serialPortTool/CenterPane.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/serialPortTool/LeftPane.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/serialPortTool/LeftPane.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/serialPortTool/TitlePane.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/serialPortTool/TitlePane.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/MainPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/MainPane.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,9 +110,6 @@
     <ui_properties converted="true" />
     <breakpoint_rules converted="true" />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="JavaFxApplication" />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -93,7 +130,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+        <option name="mavenHome" value="D:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.2\plugins\maven\lib\maven3" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
@@ -110,7 +147,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -122,33 +158,34 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/Resource/Icon" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/Resource/Icon" />
-      <recent name="$PROJECT_DIR$/src/main/Resource" />
-      <recent name="C:\Users\cnrobot\Documents\javafx_maven_jni_demo\src\main\Resource" />
-      <recent name="$PROJECT_DIR$/src/main/java/SerialPortTool" />
-      <recent name="$PROJECT_DIR$/target/classes/sample" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/Resource" />
       <recent name="C:\Users\cnrobot\Documents\javafx_maven_jni_demo\src\main\Resource" />
       <recent name="$PROJECT_DIR$/src/main/cpp" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kangb\Documents\javaProj\java_serial_demo_with_javafx\src\main\Resource" />
+      <recent name="C:\Users\kangb\Documents\javaProj\java_serial_demo_with_javafx\src\main\java" />
+      <recent name="$PROJECT_DIR$/src/main/Resource/Icon" />
+      <recent name="$PROJECT_DIR$/src/main/Resource" />
+      <recent name="C:\Users\cnrobot\Documents\javafx_maven_jni_demo\src\main\Resource" />
+    </key>
   </component>
-  <component name="RunManager" selected="Kotlin.serialPortTool.MainKt">
+  <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -274,6 +311,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -291,117 +329,58 @@
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="1302000" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="841" y="271" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1586398675919">
-      <screen x="65" y="24" width="1855" height="1056" />
+    <state x="689" y="309" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1603095386710">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="841" y="271" key="#com.intellij.ide.macro.MacrosDialog/65.24.1855.1056@65.24.1855.1056" timestamp="1586398675919" />
-    <state x="805" y="251" key="#com.intellij.ide.util.MemberChooser" timestamp="1586500208330">
-      <screen x="65" y="24" width="1855" height="1056" />
+    <state x="689" y="309" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603095386710" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1602661875689">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="805" y="251" key="#com.intellij.ide.util.MemberChooser/65.24.1855.1056@65.24.1855.1056" timestamp="1586500208330" />
-    <state x="547" y="239" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1586318140285">
-      <screen x="65" y="24" width="1855" height="1056" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602661875689" />
+    <state width="1877" height="225" key="GridCell.Tab.0.bottom" timestamp="1603101085558">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="547" y="239" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/65.24.1855.1056@65.24.1855.1056" timestamp="1586318140285" />
-    <state x="769" y="450" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1586398218532">
-      <screen x="65" y="24" width="1855" height="1056" />
+    <state width="1877" height="225" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603101085558" />
+    <state width="1877" height="225" key="GridCell.Tab.0.center" timestamp="1603101085558">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="769" y="450" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/65.24.1855.1056@65.24.1855.1056" timestamp="1586398218532" />
-    <state x="511" y="216" key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor" timestamp="1586398216944">
-      <screen x="65" y="24" width="1855" height="1056" />
+    <state width="1877" height="225" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603101085558" />
+    <state width="1877" height="225" key="GridCell.Tab.0.left" timestamp="1603101085558">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="511" y="216" key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor/65.24.1855.1056@65.24.1855.1056" timestamp="1586398216944" />
-    <state x="730" y="288" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586920294137">
-      <screen x="65" y="24" width="1855" height="1056" />
+    <state width="1877" height="225" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603101085558" />
+    <state width="1877" height="225" key="GridCell.Tab.0.right" timestamp="1603101085558">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="490" y="182" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1586916324884" />
-    <state x="730" y="288" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/65.24.1855.1056@65.24.1855.1056" timestamp="1586920294137" />
-    <state x="318" y="406" width="1115" height="335" key="#com.intellij.tools.ToolEditorDialog" timestamp="1586398819766">
-      <screen x="65" y="24" width="1855" height="1056" />
+    <state width="1877" height="225" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603101085558" />
+    <state x="490" y="175" key="Maven.ArtifactSearchDialog" timestamp="1602497610240">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="318" y="406" width="1115" height="335" key="#com.intellij.tools.ToolEditorDialog/65.24.1855.1056@65.24.1855.1056" timestamp="1586398819766" />
-    <state x="539" y="321" key="FileChooserDialogImpl" timestamp="1586398280923">
-      <screen x="65" y="24" width="1855" height="1056" />
+    <state x="490" y="175" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602497610240" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1603096759323">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="539" y="321" key="FileChooserDialogImpl/65.24.1855.1056@65.24.1855.1056" timestamp="1586398280923" />
-    <state width="1809" height="196" key="GridCell.Tab.0.bottom" timestamp="1587094710821">
-      <screen x="65" y="24" width="1855" height="1056" />
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603096759323" />
+    <state x="516" y="117" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602503137286">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1323" height="285" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586918469520" />
-    <state width="1809" height="196" key="GridCell.Tab.0.bottom/65.24.1855.1056@65.24.1855.1056" timestamp="1587094710821" />
-    <state width="1809" height="196" key="GridCell.Tab.0.center" timestamp="1587094710821">
-      <screen x="65" y="24" width="1855" height="1056" />
-    </state>
-    <state width="1323" height="285" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586918469519" />
-    <state width="1809" height="196" key="GridCell.Tab.0.center/65.24.1855.1056@65.24.1855.1056" timestamp="1587094710821" />
-    <state width="1809" height="196" key="GridCell.Tab.0.left" timestamp="1587094710821">
-      <screen x="65" y="24" width="1855" height="1056" />
-    </state>
-    <state width="1323" height="285" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586918469519" />
-    <state width="1809" height="196" key="GridCell.Tab.0.left/65.24.1855.1056@65.24.1855.1056" timestamp="1587094710821" />
-    <state width="1809" height="196" key="GridCell.Tab.0.right" timestamp="1587094710821">
-      <screen x="65" y="24" width="1855" height="1056" />
-    </state>
-    <state width="1323" height="285" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586918469520" />
-    <state width="1809" height="196" key="GridCell.Tab.0.right/65.24.1855.1056@65.24.1855.1056" timestamp="1587094710821" />
-    <state width="1809" height="332" key="GridCell.Tab.1.bottom" timestamp="1587092410297">
-      <screen x="65" y="24" width="1855" height="1056" />
-    </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586918468217" />
-    <state width="1809" height="332" key="GridCell.Tab.1.bottom/65.24.1855.1056@65.24.1855.1056" timestamp="1587092410297" />
-    <state width="1809" height="332" key="GridCell.Tab.1.center" timestamp="1587092410296">
-      <screen x="65" y="24" width="1855" height="1056" />
-    </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1586918468216" />
-    <state width="1809" height="332" key="GridCell.Tab.1.center/65.24.1855.1056@65.24.1855.1056" timestamp="1587092410296" />
-    <state width="1809" height="332" key="GridCell.Tab.1.left" timestamp="1587092410296">
-      <screen x="65" y="24" width="1855" height="1056" />
-    </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1586918468216" />
-    <state width="1809" height="332" key="GridCell.Tab.1.left/65.24.1855.1056@65.24.1855.1056" timestamp="1587092410296" />
-    <state width="1809" height="332" key="GridCell.Tab.1.right" timestamp="1587092410297">
-      <screen x="65" y="24" width="1855" height="1056" />
-    </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1586918468216" />
-    <state width="1809" height="332" key="GridCell.Tab.1.right/65.24.1855.1056@65.24.1855.1056" timestamp="1587092410297" />
-    <state x="530" y="197" key="Maven.ArtifactSearchDialog" timestamp="1586764219995">
-      <screen x="65" y="24" width="1855" height="1056" />
-    </state>
-    <state x="530" y="197" key="Maven.ArtifactSearchDialog/65.24.1855.1056@65.24.1855.1056" timestamp="1586764219995" />
-    <state x="307" y="186" width="1129" height="717" key="SettingsEditor" timestamp="1587022431547">
-      <screen x="65" y="24" width="1855" height="1056" />
-    </state>
-    <state x="123" y="11" width="1129" height="717" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1586427490762" />
-    <state x="307" y="186" key="SettingsEditor/65.24.1855.1056@65.24.1855.1056" timestamp="1587022431547" />
-    <state x="654" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1587085243887">
-      <screen x="65" y="24" width="1855" height="1056" />
-    </state>
-    <state x="434" y="246" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1586401011832" />
-    <state x="654" y="381" key="com.intellij.ide.util.TipDialog/65.24.1855.1056@65.24.1855.1056" timestamp="1587085243887" />
-    <state x="771" y="256" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1586770744587">
-      <screen x="65" y="24" width="1855" height="1056" />
-    </state>
-    <state x="771" y="256" key="com.intellij.testIntegration.createTest.CreateTestDialog/65.24.1855.1056@65.24.1855.1056" timestamp="1586770744587" />
-    <state x="637" y="146" width="710" height="783" key="find.popup" timestamp="1586489161392">
-      <screen x="65" y="24" width="1855" height="1056" />
-    </state>
-    <state x="637" y="146" width="710" height="783" key="find.popup/65.24.1855.1056@65.24.1855.1056" timestamp="1586489161392" />
-    <state x="493" y="257" width="672" height="677" key="run.anything.popup" timestamp="1586327685591">
-      <screen x="65" y="24" width="1855" height="1056" />
-    </state>
-    <state x="493" y="257" width="672" height="677" key="run.anything.popup/65.24.1855.1056@65.24.1855.1056" timestamp="1586327685591" />
-    <state x="346" y="49" width="670" height="58" key="search.everywhere.popup" timestamp="1586917766736">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="346" y="49" width="670" height="58" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1586917766736" />
-    <state x="722" y="453" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1586426404221">
-      <screen x="65" y="24" width="1855" height="1056" />
-    </state>
-    <state x="722" y="453" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/65.24.1855.1056@65.24.1855.1056" timestamp="1586426404221" />
+    <state x="516" y="117" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1602503137286" />
   </component>
 </project>
